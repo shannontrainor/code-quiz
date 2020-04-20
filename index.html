@@ -1,18 +1,59 @@
+<!--HW-->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+
     <title>Code Quiz</title>
 </head>
 
 <body>
+    <div id="start"></div>
+    <div id="quiz" style="display: none;">
+        <div id="question">
+            <p>question</p>
+        </div>
+        <div id="timer">
+            <div id="counter"> </div>
+            <div id="bgtime"> </div>
+            <div id="time"></div>
+        </div>
+        <div id="options">
+            <div class="choice" id="A" onclick="selectAnswer('A')">A</div>
+            <div class="choice" id="B" onclick="selectAnswer('B')">B</div>
+            <div class="choice" id="C" onclick="selectAnswer('C')">C</div>
+        </div>
+        <div id="progress">
+            <div class="prog"></div>
+        </div>
+        <div id="score" style="display: none;">
+        </div>
 
-    <h1>Coding Quiz</h1>
-    <h2>Attempt to answer the following questions within the given time span. </h2>
+        <!-- </div>
+        <h1>Coding Quiz</h1>
+        <p>Attempt to answer all questions within the allowed time. If you answer a question incorrectly, 10 seconds
+            will be
+            subtracted from your time.</p>
+        <button id="start">Get Started</button>
+    </div>
+    <div id="results"></div> -->
 
-    <script src="script.js"></script>
+
+
+
+
+
+
+
+
+
+
+        <script src="script.js"></script>
 </body>
 
 </html>
