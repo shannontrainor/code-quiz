@@ -8,40 +8,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 
-
     <title>Code Quiz</title>
 </head>
 
 <body>
-    <div id="start"></div>
-    <div id="quiz" style="display: none;">
-        <div id="question">
-            <p>question</p>
-        </div>
-        <div id="timer">
-            <div id="counter"> </div>
-            <div id="bgtime"> </div>
-            <div id="time"></div>
-        </div>
-        <div id="options">
-            <div class="choice" id="A" onclick="selectAnswer('A')">A</div>
-            <div class="choice" id="B" onclick="selectAnswer('B')">B</div>
-            <div class="choice" id="C" onclick="selectAnswer('C')">C</div>
-        </div>
-        <div id="progress">
-            <div class="prog"></div>
-        </div>
-        <div id="score" style="display: none;">
+    <!--divs for timer & score counter-->
+    <div class="timer">Time: <span id="time">0</span></div>
+
+    <div class="scores">Highscores</div>
+
+<!--divs for start & end pages-->
+    <div class="container">
+        <div id="start-page" class="start">
+            <h1>Coding Quiz</h1>
+            <p>Attempt to answer all questions within the allowed time. If you answer a question incorrectly, 10 seconds
+                will be
+                subtracted from your time.
+            </p>
+            <button id="start">Get Started</button>
         </div>
 
-        <!-- </div>
-        <h1>Coding Quiz</h1>
-        <p>Attempt to answer all questions within the allowed time. If you answer a question incorrectly, 10 seconds
-            will be
-            subtracted from your time.</p>
-        <button id="start">Get Started</button>
+        <div id="questions" class="hide">
+            <h2 id="question-title"></h2>
+            <div id="options" class="options"></div>
+        </div>
+
+        <div id="end-page" class="hide">
+            <h2>Quiz Complete!</h2>
+            <p>Your score is <span id="final-score"></span></p>
+            <p>Please enter your initials: <input type="text" id="initials" />
+            <button id="submit">Submit</button>
+        </p>
+        </div>
+
     </div>
-    <div id="results"></div> -->
 
 
 
@@ -49,11 +49,7 @@
 
 
 
-
-
-
-
-        <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
