@@ -2,9 +2,10 @@
 //instructions in div id of #start
 
 // main variables for quiz outline
-var start = document.getElementById("start");
 var questionsEl = document.getElementById("question");
-
+//define time for quiz
+var quizTime = 60;
+var quizTimer;
 
 
 // GIVEN I am taking a code quiz
@@ -13,9 +14,13 @@ var questionsEl = document.getElementById("question");
 //*****************START GAME***************************
 // WHEN I click the start button
 // start button on main page with id of #start-button
-$("#start-button").on("click", startGame)
-    // hide main pg when start button pressed
+$("#start-button").on("click", startQuiz);
+    
     // start game
+function startQuiz();
+    // hide main page when start button pressed
+    $("#start-page").hide();
+}
     // generate first question with choice buttons
 // THEN a timer starts and I am presented with a question
     //create a timer
