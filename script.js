@@ -1,29 +1,43 @@
 //upon loading game user will see all instructions (part of HTML)
 //instructions in div id of #start
 
-// main variables for quiz outline
-var questionsEl = document.getElementById("question");
+
+var questionsElement = document.getElementById("question");
 //define time for quiz
-var quizTime = 60;
+var quizTime = questions.length * 15;
 var quizTimer;
-
-
-// GIVEN I am taking a code quiz
-//html for code quiz page
+var optionsElement = document.getElementById("options");
 
 //*****************START GAME***************************
 // WHEN I click the start button
-// start button on main page with id of #start-button
 $("#start-button").on("click", startQuiz);
-    
+
     // start game
-function startQuiz();
-    // hide main page when start button pressed
+function startQuiz(){
+    // hide start page when start button pressed
     $("#start-page").hide();
+
+    //generate a question
+    questionsElement.removeAttribute("class");
+   //start timer
+    quizTimer = setInterval(timeCount, 1000)
+    //show timer on page
+    quizTimer.textContent = time;
+}
+
+function timeCount (){
+    // subtract time
+    time--;
+    quizTimer.textContent = time;
 }
     // generate first question with choice buttons
+function generateQuestion() {
+
+}
+
+    //store time in variable quizTime, default at 60 s.
+
 // THEN a timer starts and I am presented with a question
-    //create a timer
     // start timer when start button is pressed
 
 //*****************QUESTIONS******************************
