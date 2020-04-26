@@ -1,6 +1,7 @@
 function displayHighscores() {
+    //get scores from localStorage
     var highscores = JSON.parse(window.localStorage.getItem("highscores"));
-
+    //sort highscores
     highscores.sort(function (a, b) {
         return b.score - a.score;
     });
@@ -15,3 +16,4 @@ function displayHighscores() {
         olElement.appendChild(liTag);
     });
 }
+displayHighscores();
