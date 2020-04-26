@@ -67,8 +67,8 @@ function questionClicked(){
     if (this.value !== questions[currentQuestionIndex].answer){
         quizTime -= 15;
 
-        if (time < 0) {
-            time = 0;
+        if (quizTime < 0) {
+            quizTime = 0;
         }
         //displays new time
         timerElement.textContent = quizTime;
@@ -144,31 +144,3 @@ function checkForSubmit(event) {
 submitBtn.onclick = saveScore;
 
 initialsElement.onkeyup = checkForSubmit;
-
-//*****************QUESTIONS*****************************
-// WHEN I answer a question incorrectly
-// THEN time is subtracted from the clock
-    //time --
-    // generate next questions with choice buttons
-
-// WHEN all questions are answered or the timer reaches 0
-// THEN the game is over
-    // if statement timer = 0, all questions answered = end game
-// WHEN the game is over
-// THEN I can save my initials and score
-    // enter intials (HTML)
-    // calculate score
-    // display score
-    // 
-
-
-
-
-//3 javascript files
-//logic
-//questions
-//scores
-
-//event listener start quiz
-
-//function getQuestion()
