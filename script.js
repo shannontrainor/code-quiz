@@ -3,6 +3,7 @@
 
 //variables for DOM elements
 var currentQuestionIndex = 0;
+var startBtn = document.getElementById("start");
 var questionsElement = document.getElementById("questions");
 var optionsElement = document.getElementById("options");
 var timerElement = document.getElementById("time");
@@ -20,8 +21,8 @@ $("#start-button").on("click", startQuiz);
     // start game
 function startQuiz(){
     // hide start page when start button pressed
-    $("#start-page").hide();
-
+    var startScreenEl = document.getElementById("start-page");
+    startScreenEl.setAttribute("class", "hide");
     //generate a question
     questionsElement.removeAttribute("class");
    //start timer
