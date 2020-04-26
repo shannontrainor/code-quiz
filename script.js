@@ -9,6 +9,7 @@ var optionsElement = document.getElementById("options");
 var timerElement = document.getElementById("time");
 var messageElement = document.getElementById("message");
 var initialsElement = document.getElementById("initials");
+var submitBtn = document.getElementById("submit")
 
 //define time for quiz
 var quizTime = questions.length * 15;
@@ -97,9 +98,9 @@ function questionClicked(){
 function timeCount (){
     // subtract time
     quizTime--;
-    timerElement.textContent = time;
+    timerElement.textContent = quizTime;
 
-    if (time <= 0) {
+    if (quizTime <= 0) {
         quizEnd();
     }
 }
@@ -125,7 +126,7 @@ function saveScore() {
 
         //object to save score of last played game
     var newScore = {
-        score: time,
+        score: quizTime,
         initials: initials
     };
             // save new score to local storage
@@ -133,8 +134,16 @@ function saveScore() {
     window.localStorage.setItem("highscores", JSON.stringify(highscores));
 }
 
-submitBtn.onclick = saveHighScore;
+function checkForSubmit(event) {
+    if (event.key === "enter") {
+        saveScore();
+    }
+}
 
+//button to click to save highscoore/enter initials
+submitBtn.onclick = saveScore;
+
+initialsElement.onkeyup = checkForSubmit;
 
 //*****************QUESTIONS*****************************
 // WHEN I answer a question incorrectly
