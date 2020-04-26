@@ -102,14 +102,20 @@ function timeCount (){
     }
 }
 
+function quizEnd() {
+    clearInterval(timer);  //clear timer when game ends
+    //display end page
+    var endPageElement = document.getElementById("end-page");
+    endPageElement.removeAttribute("class");
+    //show score
+    var scoreElement = document.getElementById("final-score");
+    scoreElement.textContent = quizTime;
 
-//*****************QUESTIONS******************************
+        //hide questions
+    questionsElement.setAttribute("class", "hide");
+}
 
-// WHEN I answer a question
-// THEN I am presented with another question
-    // hide previous question
-    // generate next question with choice buttons
-
+//*****************QUESTIONS*****************************
 // WHEN I answer a question incorrectly
 // THEN time is subtracted from the clock
     //time --
