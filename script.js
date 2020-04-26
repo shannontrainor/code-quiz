@@ -6,7 +6,8 @@ var currentQuestionIndex = 0;
 var questionsElement = document.getElementById("questions");
 var optionsElement = document.getElementById("options");
 var timerElement = document.getElementById("time");
-var messageElement = document.getElementById("message")
+var messageElement = document.getElementById("message");
+var initialsElement = document.getElementById("initials");
 
 //define time for quiz
 var quizTime = questions.length * 15;
@@ -108,12 +109,31 @@ function quizEnd() {
     var endPageElement = document.getElementById("end-page");
     endPageElement.removeAttribute("class");
     //show score
-    var scoreElement = document.getElementById("final-score");
-    scoreElement.textContent = quizTime;
+    var finalScoreElement = document.getElementById("final-score");
+    finalScoreElement.textContent = quizTime;
 
         //hide questions
     questionsElement.setAttribute("class", "hide");
 }
+
+function saveScore() {
+    var initials = initialsElement.value;
+
+    //get saved scores from local storage, or set to empty array
+    var highscores = JSON.parse(window.localStorage.getItem("highscores"));
+
+        //object to save score of last played game
+    var newScore = {
+        score: time,
+        initials: initials
+    };
+            // save new score to local storage
+    highscores.push(newScore);
+    window.localStorage.setItem("highscores", JSON.stringify(highscores));
+}
+
+submitBtn.onclick = saveHighScore;
+
 
 //*****************QUESTIONS*****************************
 // WHEN I answer a question incorrectly
