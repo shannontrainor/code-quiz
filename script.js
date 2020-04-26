@@ -9,7 +9,8 @@ var optionsElement = document.getElementById("options");
 var timerElement = document.getElementById("time");
 var messageElement = document.getElementById("message");
 var initialsElement = document.getElementById("initials");
-var submitBtn = document.getElementById("submit")
+var submitBtn = document.getElementById("submit");
+var startBtn = document.getElementById("start");
 
 //define time for quiz
 var quizTime = questions.length * 15;
@@ -17,7 +18,7 @@ var timer;
 
 //*****************START GAME***************************
 // WHEN I click the start button
-$("#start-button").on("click", startQuiz);
+startBtn.onclick = startQuiz;
 
     // start game
 function startQuiz(){
