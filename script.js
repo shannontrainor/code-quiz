@@ -10,7 +10,7 @@ var messageElement = document.getElementById("message")
 
 //define time for quiz
 var quizTime = questions.length * 15;
-var quizTimer;
+var timer;
 
 //*****************START GAME***************************
 // WHEN I click the start button
@@ -24,7 +24,7 @@ function startQuiz(){
     //generate a question
     questionsElement.removeAttribute("class");
    //start timer
-    quizTimer = setInterval(timeCount, 1000)
+    timer = setInterval(timeCount, 1000);
     //show timer on page
     timerElement.textContent = quizTime;
 
@@ -41,7 +41,7 @@ function generateQuestion() {
     var titleElement = document.getElementById("question-title");
     titleElement.textContent = currentQuestion.title;
    
-    //remove past questions
+    //hide past questions
     optionsElement.innerHTML = "";
 
     currentQuestion.options.forEach(function(option, i){
@@ -55,7 +55,7 @@ function generateQuestion() {
         optionButton.onclick = questionClicked;  //will be new function
 
         //displays on page
-        optionsElement.appendChild(optionsButton);
+        optionsElement.appendChild(optionButton);
     });
 
 }
@@ -74,26 +74,34 @@ function questionClicked(){
     } else {
         messageElement.textContent = "Correct";
     }
-        messageElement.setAttribute("class", "message");
-        setTimeout(function(){
-            messageElement.setAttribute("class", "message hide");
-        }, 1000);
 
 
+    messageElement.setAttribute("class", "message");
+    setTimeout(function(){
+    messageElement.setAttribute("class", "message hide");
+    }, 1000);
 
+    //display next question
+    currentQuestionIndex++;
 
+    //check if there are no more questions
+    if (currentQuestionIndex === questions.length) {
+        quizEnd();          //new function
+    } else {
+        generateQuestion();
+    }
 }
 
 function timeCount (){
     // subtract time
     quizTime--;
     timerElement.textContent = time;
+
+    if (time <= 0) {
+        quizEnd();
+    }
 }
 
-    //store time in variable quizTime, default at 60 s.
-
-// THEN a timer starts and I am presented with a question
-    // start timer when start button is pressed
 
 //*****************QUESTIONS******************************
 
