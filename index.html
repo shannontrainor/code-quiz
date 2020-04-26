@@ -12,44 +12,44 @@
 </head>
 
 <body>
-    <!--divs for timer & score counter-->
-    <div class="timer">Time: <span id="time">0</span></div>
+    <!--div for timer & score-->
+    <div class="quiz-timer">Time: <span id="time">0</span></div>
+    <div id="current-score">Score:</div>
 
-    <div class="scores">Highscores</div>
-
-<!--divs for start & end pages-->
+<!--div for start page-->
     <div class="container">
-        <div id="start-page" class="start">
+        <div id="start-page">
             <h1>Coding Quiz</h1>
             <p>Attempt to answer all questions within the allowed time. If you answer a question incorrectly, 10 seconds
                 will be
                 subtracted from your time.
             </p>
-            <button id="start">Get Started</button>
+            <button id="start-button">Get Started!</button>
         </div>
 
-        <div id="questions" class="hide">
+        <!--div for questions-->
+        <div id="questions" class="hide">  <!--class to hide each question after it is answered-->
             <h2 id="question-title"></h2>
             <div id="options" class="options"></div>
         </div>
-
-        <div id="end-page" class="hide">
-            <h2>Quiz Complete!</h2>
+<!--div for end page-->
+        <div id="end-page" class="hide">   <!--will hide until ready to display-->
+            <h1>Quiz Complete!</h1>
             <p>Your score is <span id="final-score"></span></p>
             <p>Please enter your initials: <input type="text" id="initials" />
             <button id="submit">Submit</button>
-        </p>
+            </p>
         </div>
-
+            <!--display correct/incorrect msg-->
+        <div id="message" class="message-hide"></div>
     </div>
 
-
-
-
-
+    <script src="http://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 
 
     <script src="script.js"></script>
+    <script src="questions.js"></script>
+    <script src="scores.js"></script>
 </body>
 
 </html>
