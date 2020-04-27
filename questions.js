@@ -22,7 +22,7 @@ var questions = [
     {
         title: "What CSS framework do we most commonly use to develop responsive websites?",
         options: ["Shoelace", "Sandlestrap", "Velcro", "Bootstrap"],
-        answer: ["Bootstrap"]
+        answer: "Bootstrap"
     },
 
     {
